@@ -79,6 +79,7 @@ class ProductController extends Controller
     public function edit($id)
     {
         $products = $this->dummyProducts();
+
         $product = null;
         foreach ($products as $p){
             if ($p['id'] == $id){
@@ -90,6 +91,7 @@ class ProductController extends Controller
         if (!$product){
             abort(404);
         }
+        
         return view('products.form', compact('product'));
     }
 
